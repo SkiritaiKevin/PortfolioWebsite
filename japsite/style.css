@@ -1,0 +1,552 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #f4f4f4;
+
+    background-image: url('pictures/paper-fibers.png');
+    background-repeat: repeat;
+    background-size: auto;
+
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(10, 10, 10, 0.9);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #111;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 15px;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #E63946;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+
+}
+
+.hero h1 {
+    font-family: 'Zen Kaku Gothic Antique', 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #f5f5f5;
+    text-shadow:
+        0 0 3px #E63946,
+        0 0 6px rgba(230, 57, 70, 0.5),
+        0 0 10px rgba(230, 57, 70, 0.3),
+        0 0 14px rgba(230, 57, 70, 0.15);
+
+    animation: fadeIn 1.5s ease forwards;
+    animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 3px #E63946,
+            0 0 6px rgba(230, 57, 70, 0.5),
+            0 0 10px rgba(230, 57, 70, 0.3),
+            0 0 14px rgba(230, 57, 70, 0.15);
+    }
+
+    50% {
+        text-shadow:
+            0 0 2px #E63946,
+            0 0 4px rgba(230, 57, 70, 0.3),
+            0 0 8px rgba(230, 57, 70, 0.2),
+            0 0 12px rgba(230, 57, 70, 0.1);
+    }
+}
+
+.hero h1:hover {
+    color: #E63946;
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ccc;
+    letter-spacing: 1px;
+    max-width: 600px;
+
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.typed-cursor {
+    display: none;
+}
+
+#typed {
+    display: block;
+    min-height: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+    margin-top: 40px;
+    color: #aaa;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 2.5s ease forwards;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #aaa;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #E63946;
+}
+
+.intro p {
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto 0;
+    font-size: 18px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sakura {
+    position: fixed;
+    top: -10px;
+    width: 15px;
+    height: 15px;
+    background: url('pictures/sakura.png') no-repeat center/contain;
+    opacity: 0.8;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.about-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.02) 0%, rgba(10, 10, 10, 0.9) 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+
+    position: relative;
+    z-index: 2;
+}
+
+.about h1::after {
+    content: '技';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.015);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    white-space: nowrap;
+
+    opacity: 0;
+    animation: kanjiFade 2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes kanjiFade {
+    to {
+        opacity: 1;
+    }
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 30px;
+    border-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent) 1;
+
+    border-left: 2px solid rgba(255, 255, 255, 0.05);
+    padding-left: 20px;
+}
+
+.about-section:last-child {
+    border-bottom: none;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    color: #b84c4c;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* idea to add section numbers next to sections, kinda trashed it since it looked ugly with work experience lol
+.section-number {
+    color: #b84c4c; 
+    opacity: 0.3; 
+    margin-right: 10px; 
+    font-weight: 400;
+}
+*/
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-grid li {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.skills-grid li:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+.experience-list {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.experience-list li {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+}
+
+.projects {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.projects h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.project-card h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #E63946;
+    transition: width 0.3s ease;
+}
+
+.project-card:hover h2::after {
+    width: 100%;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+
+    box-shadow: 0 4px 20px rgba(230, 57, 70, 0.1);
+}
+
+.project-notice {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.cc-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.cc-section h1 {
+    color: #ffffff;
+}
+
+.cc-role {
+    color: #b3b3b3;
+}
+
+/* responsive grid of cards */
+.cc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.cc-card {
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: #f5f5f5;
+}
+
+.cc-card h2 {
+    color: #ffffff;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.cc-card ul li {
+    color: #d1d1d1;
+}
+
+/* tighter list for competitions */
+.cc-compact {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.cc-note {
+    font-size: 0.95rem;
+    color: var(--muted-text, #666);
+    margin-top: 0.5rem;
+}
+
+/* links */
+.cc-card a {
+    color: #4da3ff;
+    border-bottom: 1px solid #4da3ff;
+}
+
+.cc-card a:hover {
+    opacity: 0.85;
+}
+
+.cc-note {
+    font-size: 0.95rem; 
+    color: #a8a8a8;
+}
+
+/* --- TCBMe page --- */
+.tcbme { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+
+.tcb-hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.tcb-hero-text h1 { margin: 0 0 .25rem; color: #fff; }
+.tcb-tagline { color: #cbd5e1; margin: 0; }
+
+.tcb-logo {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #1e1e1e; border: 1px solid #2d2d2d; border-radius: 12px; padding: 1rem;
+}
+.tcb-logo img { max-width: 220px; height: auto; opacity: .95; }
+.tcb-caption { color: #9ca3af; font-size: .85rem; margin-top: .5rem; }
+
+.tcb-story, .tcb-outlook { margin-top: 1rem; }
+
+.tcb-photo { margin: .5rem 0 0; }
+.tcb-photo img {
+  width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid #2d2d2d; box-shadow: 0 2px 10px rgba(0,0,0,.4);
+}
+.tcb-photo figcaption { color: #9ca3af; font-size: .9rem; margin-top: .25rem; }
+
+/* small citation text inside cards */
+.tcb-cite { color: #9ca3af; font-size: .85rem; margin-top: .5rem; }
+
+/* =========================
+   Summer Research 1 (Generative AI & Security)
+   ========================= */
+.sr1{
+  --sr1-bg-1: rgba(255,255,255,.06);
+  --sr1-bg-2: rgba(255,255,255,.03);
+  --sr1-border: rgba(255,255,255,.12);
+  --sr1-text-1: #ffffff;
+  --sr1-text-2: #cbd5e1;
+  --sr1-muted: #9aa3b2;
+  --sr1-accent: #7dd3fc;
+  --sr1-accent-2: #60a5fa;
+  --sr1-radius: 14px;
+
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* Hero */
+.sr1-hero{ margin-bottom: 1rem; }
+.sr1-title{
+  margin: 0 0 .35rem;
+  background: linear-gradient(90deg, #fff, var(--sr1-accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  letter-spacing: .2px;
+}
+.sr1-tagline{ color: var(--sr1-text-2); margin: 0; }
+
+/* Grid + cards */
+.sr1-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1rem; }
+.sr1-card{
+  border-radius: var(--sr1-radius);
+  background: linear-gradient(180deg, var(--sr1-bg-1), var(--sr1-bg-2));
+  border: 1px solid var(--sr1-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+  padding: 1.1rem 1.25rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.sr1-card:hover{ transform: translateY(-2px); border-color: rgba(125,211,252,.35); box-shadow: 0 16px 40px rgba(0,0,0,.55); }
+.sr1-card h2{ font-size: 1.1rem; margin: .25rem 0 .75rem; color: var(--sr1-text-1); }
+.sr1-card p{ color: var(--sr1-text-2); }
+.sr1-card strong{ color: var(--sr1-text-1); }
+
+/* Lists */
+.sr1-list{ margin: 0; padding-left: 1.2rem; }
+.sr1-list li{ margin:.35rem 0; color: var(--sr1-text-2); }
+
+/* Badges */
+.sr1-badges{ display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.5rem; }
+.sr1-badge{
+  background: rgba(125,211,252,.12);
+  color: var(--sr1-accent);
+  border: 1px solid rgba(125,211,252,.35);
+  padding:.25rem .55rem; border-radius:999px; font-size:.85rem;
+}
+
+/* Links/Buttons */
+.sr1-links{ margin-top:.5rem; }
+.sr1-btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background: linear-gradient(90deg, var(--sr1-accent-2), var(--sr1-accent));
+  color:#0b1220; border:none; border-radius:10px;
+  padding:.6rem .9rem; font-weight:700; text-decoration:none;
+  box-shadow: 0 10px 24px rgba(96,165,250,.25);
+  transition: transform .17s ease, box-shadow .17s ease, filter .17s ease;
+}
+.sr1-btn:hover{ transform: translateY(-1px); filter:saturate(1.08); }
+
+/* CTA card spacing */
+.sr1-cta{ margin-top: 1rem; }
+
+/* Summer Research In Progress Minimal Style */
+.sr2 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.sr2-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sr2-tagline {
+  margin-top: 0.5rem;
+  color: #ccc;
+  font-size: 1.1rem;
+}
